@@ -1,1 +1,28 @@
 \chapter{Naive Bayes}
+\label{chap:Naive Bayes}
+
+\section{Model}
+
+\begin{equation}
+p(X|Y)=\prod_{i=1}^D P(X_i|Y)
+\end{equation}
+where D is the number of features.
+
+\section{MLE Solution}
+
+Likelihood:
+
+\begin{eqnarray*}
+p(D | \pi, \theta)  & =& \prod_{n=1}^N p(x^{(n)}, y^{(n)})\\
+      & =& \prod_{n=1}^N p(y^{(n)})\prod_{i=1}^D p(x^{(n)}_i |y^{(n)})
+\end{eqnarray*}
+
+For discrete distributions, we have MLE solution as follows:
+
+\begin{equation}
+\pi_k = P(Y=c_k) = \frac{\sum_{n=1}^N \textit{I}(y^{(n)}=c_k)}{N}
+\end{equation}
+
+\begin{equation}
+\theta_{kij} = P(X_i=a_{ij} | Y=c_k) = \frac{\sum_{n=1}^N \textit{I} (x^{(n)}_i=a_{ij}, y^{(n)}=c_k)}{\sum_{n=1}^N \textit{I} (y^{(n)}=c_k)}
+\end{equation} 
